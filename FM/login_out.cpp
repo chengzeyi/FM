@@ -378,7 +378,10 @@ int login_out_interface(void)
 		while(request_token(email, password, captcha_solution, captcha_id) != 0)
 			continue;
 		if (status == 0)
+		{
+			printf("succeeded to login!\n");
 			break;
+		}
 		printf("failed to login!\n");
 		login_out_clean();
 	}
